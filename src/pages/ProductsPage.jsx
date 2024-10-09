@@ -1,3 +1,4 @@
+import Card from "../components/Card";
 import { useProducts } from "../context/ProductsProvider";
 import styles from "./ProductsPage.module.css";
 
@@ -9,7 +10,7 @@ function ProductsPage() {
       <div className={styles.products}>
         {!products.length && <p>No products found</p>}
         {products.map((product) => (
-          <p key={product.id}>{product.title}</p>
+          <Card key={product.id} data={product} />
         ))}
       </div>
       <div></div>
