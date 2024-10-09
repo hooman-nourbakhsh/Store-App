@@ -13,17 +13,26 @@ function ProductsPage() {
   const products = useProducts();
   const [displayed, setDisplayed] = useState([]);
   const [search, setSearch] = useState("");
+  const [query, setQuery] = useState({});
 
   useEffect(() => {
     setDisplayed(products);
   }, [products]);
 
-  const searchHandler = () => {};
+  useEffect(() => {
+    console.log(query);
+  }, [query]);
+
+  const searchHandler = () => {
+    setQuery((query) => ({ ...query, search }));
+    console.log("fsd");
+  };
 
   const categoryHandler = (event) => {
     const { tagName } = event.target;
-    const category = event.target.innerText.ToLowerCase();
+    const category = event.target.innerText.toLowerCase();
     if (tagName !== "LI") return;
+    setQuery((query) => ({ ...query, category }));
   };
 
   return (
