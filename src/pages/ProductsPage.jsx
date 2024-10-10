@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 
 import styles from "./ProductsPage.module.css";
 import { FaListUl } from "react-icons/fa";
-import { createQueryObject, filterProducts, searchProducts } from "../helper/helper";
+import { createQueryObject, filterProducts, getInitialQuery, searchProducts } from "../helper/helper";
 import { useSearchParams } from "react-router-dom";
 
 function ProductsPage() {
@@ -21,10 +21,12 @@ function ProductsPage() {
 
   useEffect(() => {
     setDisplayed(products);
+    setQuery(getInitialQuery(searchParams));
   }, [products]);
 
   useEffect(() => {
     setSearchParams(query);
+    setSearch(query.search || "");
     let finalProducts = searchProducts(products, query.search);
     finalProducts = filterProducts(finalProducts, query.category);
 
