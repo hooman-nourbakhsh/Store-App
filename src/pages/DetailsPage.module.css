@@ -1,17 +1,17 @@
 .container {
   display: flex;
   align-items: flex-start;
-  min-height: 1000px;
+  /* min-height: 1000px; */
   width: 100%;
 }
 .container img {
   width: 300px;
+  height: 250px;
   padding: 15px 25px;
   background-color: #fff;
   border: 2px dashed #fe5d42;
   border-radius: 50px;
   margin: 10px;
-  margin-right: 50px;
 }
 .information {
   width: 100%;
@@ -27,7 +27,7 @@
 }
 .description {
   color: grey;
-  width: 500px;
+  width: fit-content;
   font-size: 1.1rem;
   margin-bottom: 40px;
 }

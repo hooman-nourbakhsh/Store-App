@@ -10,8 +10,9 @@ function CheckoutPage() {
   const clickHandler = (type, payload) => dispatch({ type, payload });
   if (!state.itemsCounter) {
     return (
-      <div className={styles.container}>
-        <p>Empty</p>
+      <div className={styles.empty}>
+        <img src="src/assets/images/emptyCart.webp" alt="emptyCart" />
+        <p>Your cart is empty</p>
       </div>
     );
   }
